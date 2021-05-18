@@ -6,8 +6,13 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter/material.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:animated_boats/counter/counter.dart';
+
+import 'package:animated_boats/app/cubit/theme_app_cubit_cubit.dart';
+import 'package:animated_boats/app/theme/theme_app.dart';
+import 'package:animated_boats/home/home.dart';
 import 'package:animated_boats/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -15,17 +20,56 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return BlocProvider<ThemeAppCubit>(
+      create: (contextBp) => ThemeAppCubit(),
+      child: _AppMaterial(),
+    );
+  }
+}
+
+class _AppMaterial extends StatefulWidget {
+  const _AppMaterial({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  __AppMaterialState createState() => __AppMaterialState();
+}
+
+class __AppMaterialState extends State<_AppMaterial>
+    with WidgetsBindingObserver {
+  @override
+  void initState() {
+    WidgetsBinding.instance!.addObserver(this);
+    super.initState();
+  }
+
+  @override
+  void didChangePlatformBrightness() {
+    context.read<ThemeAppCubit>().updateAppTheme();
+    super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance!.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        accentColor: const Color(0xFF13B9FF),
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: context.select(
+          (ThemeAppCubit themeAppCubit) => themeAppCubit.state.themeMode),
       localizationsDelegates: [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
     );
   }
 }

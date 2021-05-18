@@ -15,6 +15,7 @@ import 'package:animated_boats/app/app_bloc_observer.dart';
 
 void main() {
   Bloc.observer = AppBlocObserver();
+  WidgetsFlutterBinding.ensureInitialized();
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
