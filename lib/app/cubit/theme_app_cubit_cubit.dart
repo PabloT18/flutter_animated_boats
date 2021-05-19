@@ -1,4 +1,4 @@
-import 'package:animated_boats/app/theme/theme_app.dart';
+import 'package:animated_boats/utils/theme/theme_app.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 

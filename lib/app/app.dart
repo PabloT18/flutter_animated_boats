@@ -11,9 +11,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:animated_boats/app/cubit/theme_app_cubit_cubit.dart';
-import 'package:animated_boats/app/theme/theme_app.dart';
+
 import 'package:animated_boats/home/home.dart';
-import 'package:animated_boats/l10n/l10n.dart';
+
+import 'package:animated_boats/utils/theme/theme_app.dart';
+import 'package:animated_boats/utils/l10n/l10n.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);

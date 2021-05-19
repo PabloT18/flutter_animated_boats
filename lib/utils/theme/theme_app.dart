@@ -20,6 +20,8 @@ class AppTheme {
     primaryColor: lightPrimaryColor,
     accentColor: lightAccentColor,
     backgroundColor: lightBackgroundColor,
+    accentIconTheme: const IconThemeData(color: Colors.black),
+    textTheme: const TextTheme(bodyText1: TextStyle(color: Colors.black)),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 
@@ -28,6 +30,8 @@ class AppTheme {
     primaryColor: darkPrimaryColor,
     accentColor: darkAccentColor,
     backgroundColor: darkBackgroundColor,
+    accentIconTheme: const IconThemeData(color: Colors.white),
+    textTheme: const TextTheme(bodyText1: TextStyle(color: Colors.white)),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
   static Brightness get currentSystemBrightness =>
