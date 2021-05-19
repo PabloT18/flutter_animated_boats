@@ -1,0 +1,13 @@
+{
+    "@@locale": "es",
+    "counterAppBarTitle": "Contador",
+    "@counterAppBarTitle": {
+        "description": "Texto mostrado en la AppBar de la página del contador"
+    },
+    "homePageTitle": "Botes",
+    "boatPageSpec": "Especificacion",
+    "boatPageSpecLength": "Tamaño",
+    "boatPageSpecBeam": "Beam",
+    "boatPageSpecWeight": "Peso",
+    "boatPageSpecFuel": "Gasolina"
+}

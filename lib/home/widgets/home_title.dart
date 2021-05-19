@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_boats/utils/responsive.dart';
-import 'package:animated_boats/utils/l10n/l10n.dart';
+import 'package:animated_boats/l10n/l10n.dart';
 
 class HomeTitle extends StatelessWidget {
   const HomeTitle({

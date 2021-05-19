@@ -5,4 +5,9 @@
         "description": "Text shown in the AppBar of the Counter Page"
     },
     "homePageTitle": "Boats",
+    "boatPageSpec": "SPEC",
+    "boatPageSpecLength": "Boat Length",
+    "boatPageSpecBeam": "Beam",
+    "boatPageSpecWeight": "Weight",
+    "boatPageSpecFuel": "Fuel capacity"
 }

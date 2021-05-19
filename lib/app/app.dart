@@ -15,7 +15,7 @@ import 'package:animated_boats/app/cubit/theme_app_cubit_cubit.dart';
 import 'package:animated_boats/home/home.dart';
 
 import 'package:animated_boats/utils/theme/theme_app.dart';
-import 'package:animated_boats/utils/l10n/l10n.dart';
+import 'package:animated_boats/l10n/l10n.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<ThemeAppCubit>(
       create: (contextBp) => ThemeAppCubit(),
-      child: _AppMaterial(),
+      child: const _AppMaterial(),
     );
   }
 }

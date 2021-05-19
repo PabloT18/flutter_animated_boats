@@ -21,7 +21,9 @@ class AppTheme {
     accentColor: lightAccentColor,
     backgroundColor: lightBackgroundColor,
     accentIconTheme: const IconThemeData(color: Colors.black),
-    textTheme: const TextTheme(bodyText1: TextStyle(color: Colors.black)),
+    textTheme: const TextTheme(
+        bodyText1: TextStyle(color: Colors.black),
+        bodyText2: TextStyle(color: Colors.black45)),
     visualDensity: VisualDensity.adaptivePlatformDensity,
   );
 
@@ -52,7 +54,7 @@ class AppTheme {
 }
 
 extension ThemeExtras on ThemeData {
-  Color get particlesColor => this.brightness == Brightness.light
+  Color get particlesColor => brightness == Brightness.light
       ? AppTheme.lightParticlesColor
       : AppTheme.darkParticlesColor;
 }
